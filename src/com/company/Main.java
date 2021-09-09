@@ -1,30 +1,27 @@
 package com.company;
 import java.util.Scanner;
-public class Main {
 
-         public static void main(String[] args) {
-            String leapYearCheck;
-            System.out.print("Enter Year to Check it LeapYear or not : ");
-            Scanner scanner = new Scanner(System.in);
-            leapYearCheck = scanner.nextLine();
-            //checking whether entred year have 4 digit or not
-            if(leapYearCheck.length() == 4 ){
-                //String to Int conversion
-                int leapYear=Integer.parseInt(leapYearCheck);
-                System.out.println("Entred year is : "+leapYear);
-                if((leapYear % 4) == 0 && (leapYear % 100) != 0 || (leapYear % 400) == 0){
-                    System.out.println(leapYear + " is a LeapYear");
-                } else {
-                    System.out.println( leapYear + " is not a LeapYear");
-                }
-            }else {
-                System.out.println("Invalid Year! Enter an valid Year of 4 digit ");
-            }
-        }
-    }
+             public class Main {
 
+                 static final int MAX_VALUE = 32;
+                 static final int MIN_VALUE = 0;
 
-
+                 public static void main(String[] args) {
+                     //Variables
+                     int number;
+                     int power;
+                     System.out.print("Enter a number to Print 2 power Table : ");
+                     Scanner scanner = new Scanner(System.in);
+                     number = scanner.nextInt();
+                     // checking the number in the 0 to 32 range , to not encounter overflow
+                     if (number >= MIN_VALUE && number < MAX_VALUE) {
+                         for (int i = 0; i < number; i++) {
+                             power = (int) Math.pow(2, i);
+                             System.out.println("2" + "^" + i + "=" + power);
+                         }
+                     }
+                 }
+             }
 
 
 
